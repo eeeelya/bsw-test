@@ -1,0 +1,21 @@
+services:
+  bet-maker:
+    container_name: bet-maker
+    build:
+      context: ../../../
+      dockerfile: build/bet-maker/dev/Dockerfile
+    env_file: ../.env
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - "../../../app:/app"
+    ports:
+      - "7001:8080"
+    restart: on-failure
+    networks:
+      - default
+
+networks:
+  default:
+    name: bsw_net
+    external: true
