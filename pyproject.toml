@@ -1,0 +1,57 @@
+[tool.pytest.ini_options]
+testpaths = ["tests", ]
+addopts = "-p no:warnings --tb=short --cov=/app --cov-report=html"
+console_output_stype = "count"
+minversion = "7.2.0"
+pythonpath = ". app"
+filterwarnings = "ignore"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+omit = ["tests/*",]
+
+[tool.mypy]
+mypy_path = "/app"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_redundant_casts = true
+strict_optional = true
+explicit_package_bases = true
+disable_error_code = ["no-redef"]
+plugins = ['pydantic.mypy']
+exclude = ["migrations"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+
+[[tool.mypy.overrides]]
+module = 'tests.*'
+disallow_untyped_defs = false
+check_untyped_defs = false
+strict_optional = false
+
+[tool.ruff]
+line-length = 88
+src = ["app/"]
+exclude = [
+    "*.git",
+    "*.hg",
+    "*.mypy_cache",
+    "*.tox",
+    "*.venv",
+    "migrations",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "alembic",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "UP", "I"]
+
+[tool.ruff.lint.isort]
+known-local-folder = ["src",]

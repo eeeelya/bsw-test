@@ -5,7 +5,7 @@ repos:
       - id: ruff
         language: python
         language_version: python3.11
-        args: ["--config", "app/pyproject.toml", "--fix"]
+        args: ["--config", "pyproject.toml", "--fix"]
       - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -14,7 +14,7 @@ repos:
       - id: mypy
         language: python
         language_version: python3.11
-        args: ["--config-file", "app/pyproject.toml"]
+        args: ["--config-file", "pyproject.toml"]
         exclude: "tests/|venv/|\\.venv/|alembic/|migrations/"
         files: app/
         additional_dependencies:
