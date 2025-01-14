@@ -14,8 +14,8 @@
     docker network create bsw_net
     make infra_build
     make SERVICE=<service_name> build
+    make SERVICE=<service_name> up
     ```
-
 ## Примечание
 
 <details>
