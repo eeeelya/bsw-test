@@ -15,7 +15,7 @@ class EnvSettings(BaseSettings):
     DB_NAME: str = "postgres"
 
     # Kafka
-    # TODO:
+    KAFKA_NODES: str = "kafka:9092"
 
     @property
     def DB_URL(self) -> str:

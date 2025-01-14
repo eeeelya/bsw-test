@@ -2,13 +2,13 @@ services:
   bet-maker:
     container_name: bet-maker
     build:
-      context: ../../../
-      dockerfile: build/bet-maker/dev/Dockerfile
+      context: ../../
+      dockerfile: build/dev/Dockerfile
     env_file: ../.env
     environment:
       - PYTHONPATH=/app
     volumes:
-      - "../../../app:/app"
+      - "../../app:/app"
     ports:
       - "7001:8080"
     restart: on-failure

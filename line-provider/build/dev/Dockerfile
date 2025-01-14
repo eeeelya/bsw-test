@@ -4,6 +4,8 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV POETRY_VERSION=1.8.2
 
+RUN apk --no-cache add python3-dev zlib-dev libc-dev gcc
+
 WORKDIR /app
 
 COPY ./app /app/
