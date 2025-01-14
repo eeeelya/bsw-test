@@ -1,2 +1,2 @@
-# Сервис line-provider
+# Сервис bet-maker
 

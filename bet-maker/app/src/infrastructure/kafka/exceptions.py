@@ -1,0 +1,2 @@
+class KafkaDidNotStarted(Exception):
+    pass

@@ -1,0 +1,21 @@
+services:
+  line-provider:
+    container_name: line-provider
+    build:
+      context: ../../
+      dockerfile: build/dev/Dockerfile
+    env_file: ../.env
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - "../../app:/app"
+    ports:
+      - "7002:8080"
+    restart: on-failure
+    networks:
+      - default
+
+networks:
+  default:
+    name: bsw_net
+    external: true
