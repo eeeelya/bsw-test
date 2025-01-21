@@ -61,7 +61,6 @@ env.bak/
 venv.bak/
 .pyenv
 .python-version
-.env
 .python-version
 
 # Spyder project settings
